@@ -19,6 +19,22 @@ header {
   margin-bottom: 30px;
 }
 
+header button{
+  padding: 0px 32.5px;
+  color: #242425;
+  width: 192.15px;
+  height: 45px;
+  border: 0.0625rem solid #242425;   
+  border-radius: 1.5rem;
+  cursor: pointer;
+  background-color: #ffff;
+}
+
+header button:hover{
+border: 0.0625rem solid #E62058;
+color: #E62058;
+}
+
 nav {
   display: flex;
   gap: 25px;
@@ -42,6 +58,17 @@ main {
   background-color: #c5c5c6;
   padding: 35px 25px;
   border-radius: 10px;
+}
+
+.main-div button{
+  padding: 0px 32.5px;
+  color: #fff;
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #fb2360;
 }
 
 .main-div-2 {
@@ -133,7 +160,8 @@ main {
 }
 
 footer{
-  margin: 70px 0;
+  margin-top: 320px;
+  margin-bottom: 100px
 }
 
 .footer-div{
@@ -142,6 +170,10 @@ footer{
 }
 
 @media (max-width: 600px) {
+
+  header{
+    padding: 0 10px;
+  }
 
   nav {
       display: none;
@@ -160,6 +192,12 @@ footer{
   .main-p-div-p img {
       width: 200px
   }
+
+  .main-div button{
+    width: 100%;
+
+  }
+  
 
   .main-p-div span {
       font-size: 20px;

@@ -37,7 +37,12 @@ const Main = () => (
         <span>
           FAssets v1.1 Launches on Songbird <br /> – Unlocking Scalable FXRP Minting
         </span>
-        <div>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 20,
+          alignItems: 'start'
+        }}>
           <button>Start</button>
           <button>Claim</button>
           <button>Buy</button>
