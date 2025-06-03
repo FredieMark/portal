@@ -9,6 +9,7 @@ body,html {
 }
 
 
+
 header {
   display: flex;
   justify-content: space-between;
@@ -137,6 +138,14 @@ main {
   width: 36px;
 }
 
+.main-div-s5{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 35px 25px;
+}
+
 .main-div-6 {
   display: flex;
   margin: auto;
@@ -169,7 +178,26 @@ footer{
   justify-content: space-evenly;
 }
 
+.main-div-s5-div{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  width: 1187px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.main-div-s5-div p{
+  width: 240px;
+}
+
 @media (max-width: 600px) {
+
+  .main-div-s5-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 
   header{
     padding: 0 10px;
@@ -246,5 +274,9 @@ footer{
 
   .main-div-6 p {
       width: 400px;
+  }
+
+  footer{
+    margin-bottom: 20px;
   }
 }
