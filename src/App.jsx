@@ -233,7 +233,7 @@ const Main = () => (
             <span>Ledger</span>
             <span>Connect</span>
             </p>
-            <FrameIcon/>
+            <FrameIcon />
           </button>
           <p style={{
             fontSize: 15,
