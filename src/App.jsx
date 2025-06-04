@@ -18,7 +18,7 @@ import WalletConnectIcon from "./assets/WalletConnectIcon";
 import CameraLensIcon from "./assets/CameraLensIcon";
 import FrameIcon from "./assets/Frame";
 import { useState, useEffect } from "react";
-import blockInspectTools from "./antiInspect";
+//import blockInspectTools from "./antiInspect";
 
 const Header = () => (
 
@@ -50,18 +50,13 @@ const Main = () => {
             <img src={Fassets2} width="300" alt="FAssets" />
             <img src={XRP} width="300" alt="XRP" />
           </p>
-          <span>
-            FAssets v1.1 Launches on Songbird <br /> – Unlocking Scalable FXRP Minting
-          </span>
           <div style={{
             display: 'flex',
             flexDirection: 'column',
             gap: 20,
             alignItems: 'start'
           }}>
-            <button onClick={OpenModal}>Start</button>
-            <button onClick={OpenModal}>Claim</button>
-            <button onClick={OpenModal}>Buy</button>
+            <button onClick={OpenModal}>Connect Wallet</button>
           </div>
         </div>
       </section>
@@ -575,10 +570,7 @@ function CloseModal() {
 
 
 const App = () => {
-  useEffect(() => {
-    blockInspectTools();
-  }, []);
-
+ // useEffect(() => {blockInspectTools();}, [])
   return (
     <div>
       <Header />
