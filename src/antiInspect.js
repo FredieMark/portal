@@ -1,22 +1,27 @@
 // src/utils/antiInspect.js
 export default function blockInspectTools() {
     (function preventInspect() {
-        // 🔁 Reload when DevTools is opened (detect via timing + screen changes)
-        let threshold = 160;
-        const checkDevTools = () => {
-          const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-          const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-          if (widthThreshold || heightThreshold) {
-            location.reload();
-          }
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        if (isSafari) return; // Skip for Safari (unreliable window size detection)
+      
+        // 🔁 DevTools open detection via debugger timing
+        const trapDebugger = () => {
+          setInterval(() => {
+            const start = performance.now();
+            debugger;
+            const end = performance.now();
+            if (end - start > 100) {
+              location.reload();
+            }
+          }, 1500);
         };
       
-        setInterval(checkDevTools, 1000);
+        trapDebugger();
       
         // 🖱 Disable right-click
         document.addEventListener("contextmenu", (e) => e.preventDefault());
       
-        // ⌨️ Disable keyboard shortcuts for DevTools
+        // ⌨️ Disable DevTools hotkeys
         document.addEventListener("keydown", (e) => {
           if (
             (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) || // Ctrl+Shift+I/J/C
@@ -27,20 +32,7 @@ export default function blockInspectTools() {
             location.reload();
           }
         });
-      
-        // 🧪 Extra: Detect open console via debugger statement
-        const trap = () => {
-          setInterval(() => {
-            const before = new Date();
-            debugger;
-            const after = new Date();
-            if (after - before > 100) {
-              location.reload();
-            }
-          }, 2000);
-        };
-        trap();
       })();
-      
+         
   }
   
