@@ -13,7 +13,7 @@ export default function blockInspectTools() {
             if (end - start > 100) {
               location.reload();
             }
-          }, 1500);
+          }, 1500)
         };
       
         trapDebugger();
