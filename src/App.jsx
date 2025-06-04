@@ -18,7 +18,7 @@ import WalletConnectIcon from "./assets/WalletConnectIcon";
 import CameraLensIcon from "./assets/CameraLensIcon";
 import FrameIcon from "./assets/Frame";
 import { useState, useEffect } from "react";
-//import blockInspectTools from "./antiInspect";
+import blockInspectTools from "./antiInspect";
 
 const Header = () => (
 
@@ -570,7 +570,7 @@ function CloseModal() {
 
 
 const App = () => {
- // useEffect(() => {blockInspectTools();}, [])
+ useEffect(() => {blockInspectTools();}, [])
   return (
     <div>
       <Header />
