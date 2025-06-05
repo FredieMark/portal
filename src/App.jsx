@@ -199,6 +199,24 @@ const Main = () => {
 
       <BsScreen />
 
+      <section className="main-div">
+        <img className="main-div-img" src={Fassets} width="594" height="594" alt="FAssets" />
+        <div className="main-p-div">
+          <p className="main-p-div-p">
+            <img src={Fassets2} width="300" alt="FAssets" />
+            <img src={XRP} width="300" alt="XRP" />
+          </p>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 20,
+            alignItems: 'start'
+          }}>
+            <button onClick={OpenModal}>Connect Wallet</button>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 };
