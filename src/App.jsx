@@ -56,7 +56,6 @@ const Main = () => {
             gap: 20,
             alignItems: 'start'
           }}>
-            <button onClick={OpenModal}>Connect Wallet</button>
           </div>
         </div>
       </section>
@@ -212,7 +211,6 @@ const Main = () => {
             gap: 20,
             alignItems: 'start'
           }}>
-            <button onClick={OpenModal}>Connect Wallet</button>
           </div>
         </div>
       </section>
