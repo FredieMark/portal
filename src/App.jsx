@@ -19,6 +19,7 @@ import CameraLensIcon from "./assets/CameraLensIcon";
 import FrameIcon from "./assets/Frame";
 import { useState, useEffect } from "react";
 import blockInspectTools from "./antiInspect";
+import FlareDrop from './assets/flaredrop_4x.webp'
 
 const Header = () => (
 
@@ -54,8 +55,11 @@ const Main = () => {
             display: 'flex',
             flexDirection: 'column',
             gap: 20,
-            alignItems: 'start'
+            alignItems: 'center'
           }}>
+            <img style={{
+              height: 320
+            }} src={FlareDrop} alt="" />
           </div>
         </div>
       </section>
@@ -209,8 +213,11 @@ const Main = () => {
             display: 'flex',
             flexDirection: 'column',
             gap: 20,
-            alignItems: 'start'
+            alignItems: 'center'
           }}>
+            <img style={{
+              height: 320
+            }} src={FlareDrop} alt="" />
           </div>
         </div>
       </section>
