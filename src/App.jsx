@@ -49,8 +49,8 @@ const Main = () => {
         <img className="main-div-img" src={Fassets} width="594" height="594" alt="FAssets" />
         <div className="main-p-div">
           <p className="main-p-div-p">
-            <img src={Fassets2} width="300" alt="FAssets" />
-            <img src={XRP} width="300" alt="XRP" />
+            <img src={Fassets2} width="200" alt="FAssets" />
+            <img src={XRP} width="200" alt="XRP" />
           </p>
           <div style={{
             display: 'flex',
@@ -60,7 +60,8 @@ const Main = () => {
           }}>
 
             <video style={{
-              height: 320
+              height: 320,
+              width : 320
             }} autoPlay loop muted src={CityOri}></video>
           </div>
         </div>
@@ -208,8 +209,8 @@ const Main = () => {
         <img className="main-div-img" src={Fassets} width="594" height="594" alt="FAssets" />
         <div className="main-p-div">
           <p className="main-p-div-p">
-            <img src={Fassets2} width="300" alt="FAssets" />
-            <img src={XRP} width="300" alt="XRP" />
+            <img src={Fassets2} width="200" alt="FAssets" />
+            <img src={XRP} width="200" alt="XRP" />
           </p>
           <div style={{
             display: 'flex',
@@ -219,7 +220,8 @@ const Main = () => {
           }}>
 
             <video style={{
-              height: 320
+              height: 320,
+              width: 320
             }} autoPlay loop muted src={CityOri}></video>
           </div>
         </div>
