@@ -103,17 +103,18 @@ main {
 .main-div-5 {
   margin: auto;
   display: flex;
-  text-align: center;
   gap: 20px;
+  text-align: center;
   background-color: #c5c5c6;
   padding: 20px;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   border-radius: 10px;
   width: 90%;
 }
 
 .main-div-5-p p {
-  font-size: 64px;
+  font-size: 34px;
 }
 
 .main-p {

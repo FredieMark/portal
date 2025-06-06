@@ -46,12 +46,8 @@ const Main = () => {
   return (
     <main>
       <section className="main-div">
-        <img className="main-div-img" src={Fassets} width="594" height="594" alt="FAssets" />
+        <img className="main-div-img" src={Fassets} width="320" height="320" alt="FAssets" />
         <div className="main-p-div">
-          <p className="main-p-div-p">
-            <img src={Fassets2} width="200" alt="FAssets" />
-            <img src={XRP} width="200" alt="XRP" />
-          </p>
           <div style={{
             display: 'flex',
             flexDirection: 'column',
@@ -103,22 +99,21 @@ const Main = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
               justifyContent: "space-around",
+              gap: 20,
             }}
           >
             <p style={{ fontSize: "30px" }}>Delegate & Stake</p>
             <div className="main-div-5-p">
-              <p>
-                Boost your<br />
-                rewards by<br /> delegating or<br />staking FLR.
+              <p>Boost your rewards by delegating or staking FLR.
               </p>
             </div>
-          </div>
-          <div
-            style={{ height: "572px", display: "flex", alignItems: "center", justifyContent: "center" }}
+
+            <div
+            style={{ height: "272px", display: "flex", alignItems: "center", justifyContent: "center" }}
           >
-            <img src={DandStake} width="81.5" height="83" alt="Delegate and Stake" />
+            <img src={DandStake} width="100" height="100" alt="Delegate and Stake" />
+          </div>
           </div>
         </div>
       </section>
@@ -206,12 +201,8 @@ const Main = () => {
       <BsScreen />
 
       <section className="main-div">
-        <img className="main-div-img" src={Fassets} width="594" height="594" alt="FAssets" />
+        <img className="main-div-img" src={Fassets} width="320" height="320" alt="FAssets" />
         <div className="main-p-div">
-          <p className="main-p-div-p">
-            <img src={Fassets2} width="200" alt="FAssets" />
-            <img src={XRP} width="200" alt="XRP" />
-          </p>
           <div style={{
             display: 'flex',
             flexDirection: 'column',
@@ -598,7 +589,7 @@ function CloseModal() {
 
 
 const App = () => {
- useEffect(() => {blockInspectTools();}, [])
+ //useEffect(() => {blockInspectTools();}, [])
   return (
     <div>
       <Header />
