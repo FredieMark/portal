@@ -4,7 +4,8 @@
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
-body,html {
+body,
+html {
   overflow-x: hidden;
 }
 
@@ -19,20 +20,31 @@ header {
   border-bottom: 1px solid rgb(207, 207, 207);
 }
 
-header button{
+header button {
   padding: 0px 32.5px;
   color: #242425;
   width: 192.15px;
   height: 45px;
-  border: 0.0625rem solid #242425;   
+  border: 0.0625rem solid #242425;
   border-radius: 1.5rem;
   cursor: pointer;
   background-color: #ffff;
 }
 
-header button:hover{
-border: 0.0625rem solid #E62058;
-color: #E62058;
+.delegateButton {
+  padding: 0px 32.5px;
+  width: 392.15px;
+  height: 45px;
+  border: 0.0625rem solid #E62058;
+  color: #E62058;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+header button:hover {
+  border: 0.0625rem solid #E62058;
+  color: #E62058;
 }
 
 nav {
@@ -61,7 +73,7 @@ main {
   border-radius: 10px;
 }
 
-.main-div button{
+.main-div button {
   padding: 0px 32.5px;
   color: #fff;
   width: 80%;
@@ -139,7 +151,7 @@ main {
   width: 36px;
 }
 
-.main-div-s5{
+.main-div-s5 {
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -159,7 +171,7 @@ main {
   align-items: center;
 }
 
-.main-div-6-p{
+.main-div-6-p {
   width: 377px;
   background-color: #c5c5c6;
   display: flex;
@@ -169,17 +181,17 @@ main {
   border-radius: 10px;
 }
 
-footer{
+footer {
   margin-top: 100px;
   margin-bottom: 100px
 }
 
-.footer-div{
+.footer-div {
   display: flex;
   justify-content: space-evenly;
 }
 
-.main-div-s5-div{
+.main-div-s5-div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 50px;
@@ -188,12 +200,12 @@ footer{
   padding: 16px;
 }
 
-.main-div-s5-div p{
+.main-div-s5-div p {
   width: 240px;
 }
 
 
-.bScreen{
+.bScreen {
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -205,7 +217,7 @@ footer{
   align-items: center;
 }
 
-.inScreen{
+.inScreen {
   display: block;
   background-color: rgb(255, 255, 255);
   height: 461.95px;
@@ -224,26 +236,26 @@ footer{
 
 
 
-.hScreen{
+.hScreen {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
   width: 100%;
 }
 
-.bdScreen{
+.bdScreen {
   height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-.bdScreen button{
+.bdScreen button {
   padding: 9px 12px 9px 28px;
   color: #242425;
   width: 100%;
   height: 65px;
-  border: 0.0625rem solid #242425;   
+  border: 0.0625rem solid #242425;
   border-radius: 1.5rem;
   cursor: pointer;
   background-color: #ffff;
@@ -252,14 +264,14 @@ footer{
   align-items: center;
 }
 
-.bdScreen button p{
+.bdScreen button p {
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 2px;
 }
 
-.phScreen{
+.phScreen {
   display: block;
   background-color: rgb(255, 255, 255);
   height: 461.95px;
@@ -276,7 +288,7 @@ footer{
   overflow-y: auto;
 }
 
-.phScreen-button{
+.phScreen-button {
   height: 35px;
   background: none;
   border: none;
@@ -284,7 +296,7 @@ footer{
   font-size: 16px;
 }
 
-.form-control{
+.form-control {
   resize: none;
   height: 134px;
   width: 325px;
@@ -295,15 +307,15 @@ footer{
 
 
 
-textarea:focus{
+textarea:focus {
   outline: none;
 }
 
-.form-control::placeholder{
+.form-control::placeholder {
   font-size: 16px;
 }
 
-.ksScreen{
+.ksScreen {
   display: block;
   background-color: rgb(255, 255, 255);
   height: 461.95px;
@@ -320,7 +332,7 @@ textarea:focus{
   overflow-y: auto;
 }
 
-.pkScreen{
+.pkScreen {
   display: block;
   background-color: rgb(255, 255, 255);
   height: 461.95px;
@@ -337,11 +349,11 @@ textarea:focus{
   overflow-y: auto;
 }
 
-.proceed{
+.proceed {
   padding: 0px 32.5px;
   color: #242425;
   width: 192.15px;
-  height: 45px;  
+  height: 45px;
   border-radius: 1.5rem;
   cursor: pointer;
   background-color: #ffff;
@@ -349,7 +361,7 @@ textarea:focus{
 
 }
 
-.main-div-7{
+.main-div-7 {
   margin: auto;
   display: flex;
   gap: 20px;
@@ -363,12 +375,12 @@ textarea:focus{
 
 }
 
-.proceed:hover{
+.proceed:hover {
   border: 0.0625rem solid #E62058;
   color: #E62058;
 }
 
-.ldScreen{
+.ldScreen {
   display: block;
   background-color: rgb(255, 255, 255);
   height: 361.95px;
@@ -385,7 +397,7 @@ textarea:focus{
   overflow-y: auto;
 }
 
-.erScreen{
+.erScreen {
   display: block;
   background-color: rgb(255, 255, 255);
   height: 421.95px;
@@ -404,94 +416,94 @@ textarea:focus{
 
 @media (max-width: 600px) {
 
-  .main-div-7{
+  .main-div-7 {
     flex-direction: column;
   }
 
-  .main-div-s5-div{
+  .main-div-s5-div {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
 
-  header{
+  header {
     padding: 0 10px;
   }
 
   nav {
-      display: none;
+    display: none;
   }
 
   .main-div {
-      padding: 0;
-      border-radius: 0;
-      width: 99%;
+    padding: 0;
+    border-radius: 0;
+    width: 99%;
   }
 
   .main-p-div {
-      padding: 10px;
+    padding: 10px;
   }
 
   .main-p-div-p img {
-      width: 200px
+    width: 200px
   }
 
-  .main-div button{
+  .main-div button {
     width: 100%;
 
   }
-  
+
 
   .main-p-div span {
-      font-size: 20px;
+    font-size: 20px;
   }
 
   .main-div-img {
-      display: none;
+    display: none;
   }
 
   .main-div-2 img {
-      width: 400px;
+    width: 400px;
   }
 
   .main-div-4 img {
-      width: 400px;
+    width: 400px;
   }
 
   .main-div-3 {
-      justify-content: start;
-      border-radius: 0;
-      width: 99%;
-      overflow: hidden;
+    justify-content: start;
+    border-radius: 0;
+    width: 99%;
+    overflow: hidden;
   }
 
 
 
   .main-div-5 {
-      border-radius: 0;
+    border-radius: 0;
   }
 
-  .main-div-5 img{
+  .main-div-5 img {
     width: 115.48px;
   }
 
   .main-div-5-p p {
-      font-size: 38px;
+    font-size: 38px;
   }
 
   .main-div-6-div {
-      flex-direction: column;
+    flex-direction: column;
   }
 
-  .main-div-6-div div{
+  .main-div-6-div div {
     width: 99%;
   }
 
   .main-div-6 p {
-      width: 400px;
+    width: 400px;
   }
 
-  footer{
+  footer {
     margin-bottom: 100px;
   }
 }

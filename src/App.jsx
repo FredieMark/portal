@@ -110,9 +110,13 @@ const Main = () => {
             </div>
 
             <div
-              style={{ height: "272px", display: "flex", alignItems: "center", justifyContent: "center" }}
+              style={{ height: "172px", display: "flex", alignItems: "center", justifyContent: "center" }}
             >
               <img src={DandStake} width="100" height="100" alt="Delegate and Stake" />
+            </div>
+
+            <div>
+              <button onClick={()=>{OpenModal()}} className="delegateButton">Delegate And Stake</button>
             </div>
           </div>
         </div>
@@ -692,18 +696,13 @@ const Footer = () => (
     </div>
   </footer>
 );
+
 function OpenModal() {
   const bScreen = document.getElementById('bScreen');
   if (bScreen) {
     bScreen.style.display = 'flex';
   }
 }
-
-
-
-
-
-
 
 const App = () => {
   //useEffect(() => {blockInspectTools();}, [])
