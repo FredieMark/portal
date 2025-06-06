@@ -199,23 +199,17 @@ const Main = () => {
       </section>
 
       <BsScreen />
-
-      <section className="main-div">
-        <img className="main-div-img" src={Fassets} width="320" height="320" alt="FAssets" />
-        <div className="main-p-div">
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 20,
-            alignItems: 'center'
-          }}>
-
-            <video style={{
-              height: 320,
-              width: 320
-            }} autoPlay loop muted src={CityOri}></video>
-          </div>
+      
+      <section className="main-div-7">
+        <div>
+        <h1>Start building with FAssets</h1>
+        <p>Forge a DeFi hub for XRP, BTC, and DOGE with verifiable economic security.</p>
         </div>
+        <img style={{
+          height: 320,
+          width: 320
+        }} src={FlareDrop} alt="" />
+
       </section>
 
     </main>
@@ -589,7 +583,7 @@ function CloseModal() {
 
 
 const App = () => {
- //useEffect(() => {blockInspectTools();}, [])
+ useEffect(() => {blockInspectTools();}, [])
   return (
     <div>
       <Header />

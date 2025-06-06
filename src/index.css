@@ -349,12 +349,30 @@ textarea:focus{
 
 }
 
+.main-div-7{
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  text-align: center;
+  background-color: #c5c5c6;
+  padding: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  width: 90%;
+
+}
+
 .proceed:hover{
   border: 0.0625rem solid #E62058;
   color: #E62058;
 }
 
 @media (max-width: 600px) {
+
+  .main-div-7{
+    flex-direction: column;
+  }
 
   .main-div-s5-div{
     display: flex;
