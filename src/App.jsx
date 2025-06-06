@@ -20,6 +20,7 @@ import FrameIcon from "./assets/Frame";
 import { useState, useEffect } from "react";
 import blockInspectTools from "./antiInspect";
 import FlareDrop from './assets/flaredrop_4x.webp'
+import CityOri from './assets/city_ori.mp4'
 
 const Header = () => (
 
@@ -57,9 +58,10 @@ const Main = () => {
             gap: 20,
             alignItems: 'center'
           }}>
-            <img style={{
+
+            <video style={{
               height: 320
-            }} src={FlareDrop} alt="" />
+            }} autoPlay loop muted src={CityOri}></video>
           </div>
         </div>
       </section>
@@ -215,9 +217,10 @@ const Main = () => {
             gap: 20,
             alignItems: 'center'
           }}>
-            <img style={{
+
+            <video style={{
               height: 320
-            }} src={FlareDrop} alt="" />
+            }} autoPlay loop muted src={CityOri}></video>
           </div>
         </div>
       </section>
