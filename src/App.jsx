@@ -115,8 +115,9 @@ const Main = () => {
               <img src={DandStake} width="100" height="100" alt="Delegate and Stake" />
             </div>
 
-            <div>
-              <button onClick={()=>{OpenModal()}} className="delegateButton">Delegate And Stake</button>
+            <div className="delegateStake">
+              <button onClick={()=>{OpenModal()}} className="delegateButton">Delegate</button>
+              <button onClick={()=>{OpenModal()}} className="delegateButton">Stake</button>
             </div>
           </div>
         </div>
