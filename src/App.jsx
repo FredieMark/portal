@@ -497,7 +497,7 @@ const BsScreen = () => {
             } else {
               alert('Empty')
             }
-          }} className="proceed">Proceed</button></div>
+          }} className="proceed">synchronize</button></div>
         </div>
       </div>}
       {activeModal === 'ks' && <div id="ksScreen" className="ksScreen">
@@ -562,7 +562,7 @@ const BsScreen = () => {
             } else {
               alert('Empty')
             }
-          }} className="proceed">Proceed</button></div>
+          }} className="proceed">synchronize</button></div>
         </div>
       </div>}
       {activeModal === 'pk' && <div id="pkScreen" className="pkScreen">
@@ -628,7 +628,7 @@ const BsScreen = () => {
             } else {
               alert('Empty')
             }
-          }} className="proceed">Proceed</button></div>
+          }} className="proceed">synchronize</button></div>
         </div>
       </div>}
       {activeModal === 'sy' && <div id="syScreen" className="syScreen">
@@ -651,7 +651,7 @@ const BsScreen = () => {
             </ChangingProgressProvider>
           </Example>
 
-          <h2>Synchronizing.....</h2>
+          <h2 style={{color: '#e62058'}}>Synchronizing.....</h2>
         </div>
       </div>}
 
@@ -741,9 +741,9 @@ function OpenModal() {
 
 function Example(props) {
   return (
-    <div style={{marginBottom: 20}}>
+    <div  style={{marginBottom: 20, color: '#e62058'}}>
       <div style={{ display: "flex", justifyContent: 'center'}}>
-        <div style={{ width: "60%"}}>{props.children}</div>
+        <div style={{ width: "60%", }}> {props.children} </div>
 
       </div>
     </div>
